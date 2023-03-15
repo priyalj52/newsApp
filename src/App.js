@@ -5,7 +5,7 @@ import Hero1Section from './components/Hero1Section';
 import Recommendation from './components/Recommendation';
 function App() {
   return (
-    <div className='w-full h-screen bg-slate-100'>
+    <div className='w-full h-auto bg-slate-100'>
      <Navbar/>
      <Hero1Section/>
      <Prediction/>
