@@ -12,7 +12,7 @@ const Prediction = () => {
         <div className="predict">
             <div className="p-header">
                 <h1 className="font-bold text-2xl mb-9" >   Popular Recommendations</h1>
-                <div className="icons flex w-full justify-between">
+                <div className="icons flex w-full flex-wrap justify-between">
                  
                     
                 <img src={Politics} alt="politics" className="w-40 pr-2  rounded-full ml-4"   />

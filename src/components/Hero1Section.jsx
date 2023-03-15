@@ -14,7 +14,7 @@ const Hero1Section = () => {
       // }, []);
       return (
             <div>
-                  <div className='flex flex-wrap w-full p-5 justify-between font-bold text-sm'>
+                  <div className='flex flex-wrap w-full gap-3 p-4 justify-between font-bold text-sm'>
                         <div className='cursor-pointer hover:text-red-600'>All News</div>
                         <div className='cursor-pointer hover:text-red-600'>Politics</div>
                         <div className='cursor-pointer hover:text-red-600'>Sports</div>
@@ -25,7 +25,7 @@ const Hero1Section = () => {
                         <div className='cursor-pointer hover:text-red-600'>India</div>
                   </div>
                   <div>
-                  <div class="max-w-2xl m-auto">
+                  {/* <div class="max-w-2xl m-auto">
   <div id="default-carousel" class="relative mb-4 mt-4 ml-4" data-carousel="static">
 
     <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
@@ -61,7 +61,52 @@ const Hero1Section = () => {
     </button>
 </div>
   <p class="ml-4">This carousel component is part of the <a class="text-blue-600 hover:underline" href="https://flowbite.com/docs/components/carousel/" target="_blank">Flowbite component library.</a></p>
+</div> */}
+
+
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner bg-slate-400 w-full md:p-5 border-[1px] border-black">
+    <div class="carousel-item active">
+        <div className='w-full border-[1px] border-black'>
+        <img class="w-1/2" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-wallpapers-Full-HD-backgroud.jpg" alt="First slide"/>
+
+        </div>
+    </div>
+    <div class="carousel-item">
+    <div className='w-full border-[1px] border-black'>
+        <img class="w-1/2" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-wallpapers-Full-HD-backgroud.jpg" alt="First slide"/>
+
+        </div>
+    </div>
+    <div class="carousel-item">
+    <div className='w-full border-[1px] border-black'>
+        <img class="w-1/2" src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-wallpapers-Full-HD-backgroud.jpg" alt="First slide"/>
+
+        </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
+
+
+
+
+
                   </div>
             </div>
       )
