@@ -16,6 +16,7 @@ const Hero1Section = () => {
       ) {
         await fetch(
           `https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
+          `https://newsapi.org/v2/top-headlines/sources?category=business&pageSize=6&apiKey=e4f4d0a0b670491eb0e397ff14666409`
         )
           .then((res) => res.json())
           .catch((Err) => console.log(Err))
@@ -23,6 +24,8 @@ const Hero1Section = () => {
             console.log(res);
             setherodata(res.articles);
             localStorage.setItem("Heronews", JSON.stringify(res.articles));
+            setherodata(res.sources);
+            localStorage.setItem("Heronews", JSON.stringify(res.sources));
           });
       } else {
         setherodata(JSON.parse(localStorage.getItem("Heronews")));
@@ -60,7 +63,14 @@ const Hero1Section = () => {
         <div className="cursor-pointer hover:text-red-600" onClick={()=>{
           localStorage.setItem("subject", "Science");
           navigate("/CustomNews");}}>Science</div>
-      
+        <div className="cursor-pointer hover:text-red-600">All News</div>
+        <div className="cursor-pointer hover:text-red-600">Politics</div>
+        <div className="cursor-pointer hover:text-red-600">Sports</div>
+        <div className="cursor-pointer hover:text-red-600">Entertaiment</div>
+        <div className="cursor-pointer hover:text-red-600">General</div>
+        <div className="cursor-pointer hover:text-red-600">International</div>
+        <div className="cursor-pointer hover:text-red-600">World</div>
+        <div className="cursor-pointer hover:text-red-600">India</div>
       </div>
       <div>
         <div
