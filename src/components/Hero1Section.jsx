@@ -92,7 +92,7 @@ const Hero1Section = () => {
                       }`}
                       alt="First slide"
                     />
-                    <div className=" w-full flex flex-col items-center bg-[#DB5461] p-5">
+                    <div className=" w-full flex flex-col items-center bg-[#c4933d86] p-5">
                       <div className="text-center w-full text-2xl font-bold text-white">
                         {val.title}
                       </div>

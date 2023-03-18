@@ -32,7 +32,7 @@ const Recommendation = () => {
 
   return (
     <div>
-      <h1 className="font-bold text-base mb-6 ml-12">Latest News </h1>
+      <h1 className="font-bold text-4xl mb-6 ml-12 mt-12">Latest News </h1>
       <div className="mx-auto my-0 flex flex-col gap-3 p-3">
         {data &&
           data.length !== 0 &&

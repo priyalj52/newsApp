@@ -13,7 +13,7 @@ const Prediction = () => {
     return (
         <div className="predict">
             <div className="p-header">
-                <h1 className="font-bold text-2xl mb-9" >   Popular Recommendations</h1>
+                <h1 className="font-bold text-4xl m-9" >   Popular Recommendations</h1>
                 <div className="icons flex w-full flex-wrap justify-between cursor-pointer">
                  
                     
