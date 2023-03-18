@@ -11,15 +11,7 @@ const Recommendation = () => {
       console.log(`Failed ${err}`);
     };
     const fetchapi = async () => {
-      if (localStorage.getItem("TopHeadnews") === undefined || localStorage.getItem("TopHeadnews") === null) {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&pageSize=3&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`);
-        console.log(response);
-        const data = await response.json();
-        console.log(data.articles)
-        setData(data.articles);
-        localStorage.setItem("TopHeadnews", JSON.stringify(data.articles));
-      } else {
-        if (
+      if (
           localStorage.getItem("TopHeadnews") === undefined ||
           localStorage.getItem("TopHeadnews") === null
         ) {
@@ -34,9 +26,9 @@ const Recommendation = () => {
         } else {
           setData(JSON.parse(localStorage.getItem("TopHeadnews")));
         }
-      };
+      }
       fetchapi().catch(handleError);
-    }
+    
   },[]);
   
   return (
