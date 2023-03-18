@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## artribution
+
+<a href="https://www.freepik.com/free-vector/tiny-people-standing-near-prohibited-gesture-isolated-flat-illustration_11235950.htm#query=no&position=4&from_view=keyword&track=sph">Image by pch.vector</a> on Freepik

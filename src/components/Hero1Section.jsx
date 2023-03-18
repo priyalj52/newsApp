@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Politics from "../images/politics.jpg";
-import Food from "../images/food.jpg";
-import Business from "../images/business.jpg";
-import Sports from "../images/sports.jpg";
 import { useNavigate } from "react-router-dom";
+import BG from '../images/no_image.jpg';
 const Hero1Section = () => {
  const navigate =useNavigate();
   const [herodata, setherodata] = useState([]);
-  const [subject ,setSubject]=useState([]);
   useEffect(() => {
     const fetchapi = async () => {
       if (
@@ -15,8 +11,7 @@ const Hero1Section = () => {
         localStorage.getItem("Heronews") === null
       ) {
         await fetch(
-          `https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
-          `https://newsapi.org/v2/top-headlines/sources?category=business&pageSize=6&apiKey=e4f4d0a0b670491eb0e397ff14666409`
+          `https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
         )
           .then((res) => res.json())
           .catch((Err) => console.log(Err))
@@ -24,8 +19,6 @@ const Hero1Section = () => {
             console.log(res);
             setherodata(res.articles);
             localStorage.setItem("Heronews", JSON.stringify(res.articles));
-            setherodata(res.sources);
-            localStorage.setItem("Heronews", JSON.stringify(res.sources));
           });
       } else {
         setherodata(JSON.parse(localStorage.getItem("Heronews")));
@@ -79,54 +72,39 @@ const Hero1Section = () => {
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
-          <div class="carousel-inner bg-slate-300 w-full md:p-5 border-[1px] border-black">
+          <div class="carousel-inner bg-[#E3F2FD] w-full md:p-5 border-[1px] border-black">
             {herodata &&
               herodata.length !== 0 &&
               herodata.map((val, idx) => (
                 <div
+                key={idx}
                   className={`${
                     idx === 0 ? "carousel-item active" : "carousel-item"
                   }`}
                 >
-                  <div className="w-full flex border-[1px] border-black">
+                  <div className="w-5/6 justify-center mx-auto my-0 flex border-[1px] border-black">
                     <img
                       class="w-[500px] h-[300px] object-cover "
                       src={`${
                         val.urlToImage === null
-                          ? "https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-wallpapers-Full-HD-backgroud.jpg"
+                          ? BG
                           : val.urlToImage
                       }`}
                       alt="First slide"
                     />
-                    <div className=" w-full flex flex-col justify-center items-center bg-cyan-400 p-5">
-                      <div className="text-center w-full font-bold">
+                    <div className=" w-full flex flex-col items-center bg-[#DB5461] p-5">
+                      <div className="text-center w-full text-2xl font-bold text-white">
                         {val.title}
                       </div>
-                      <div className=" text-blue-900 text-center text-xs">
+                      <div className=" text-blue-900 font-semibold text-center text-md">
                         {val.author}
                       </div>
-                      <div className="w-full text-justify">
+                      <div className="w-full text-justify  font-semibold">
                         {val.description}
                       </div>
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="#000"
-                          class="bi bi-box-arrow-up-right"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                          />
-                        </svg>
-                      </div>
+                      <a href={val.url} className="bg-[#B5EF8A] hover:text-black cursor-pointer hover:no-underline	 p-1 text-center rounded-md shadow-lg font-semibold">
+                        Learn More
+                      </a>
                     </div>
                   </div>
                 </div>
