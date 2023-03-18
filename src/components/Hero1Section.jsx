@@ -11,7 +11,7 @@ const Hero1Section = () => {
         localStorage.getItem("Heronews") === null
       ) {
         await fetch(
-          `https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
+          `https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
         )
           .then((res) => res.json())
           .catch((Err) => console.log(Err))
