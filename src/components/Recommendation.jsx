@@ -45,7 +45,6 @@ const Recommendation = () => {
       <div>
         {
           data && data.length !== 0 && data.map((val, idx) => {
-
             return (
               <div key={idx} className="heading" >
                 <div className="top flex justify-around w-100">

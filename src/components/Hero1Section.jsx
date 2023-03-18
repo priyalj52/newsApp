@@ -62,16 +62,8 @@ const Hero1Section = () => {
           navigate("/CustomNews");}} >Technology</div>
         <div className="cursor-pointer hover:text-red-600" onClick={()=>{
           localStorage.setItem("subject", "Science");
-          navigate("/CustomNews");}}>Science</div>
-        <div className="cursor-pointer hover:text-red-600">All News</div>
-        <div className="cursor-pointer hover:text-red-600">Politics</div>
-        <div className="cursor-pointer hover:text-red-600">Sports</div>
-        <div className="cursor-pointer hover:text-red-600">Entertaiment</div>
-        <div className="cursor-pointer hover:text-red-600">General</div>
-        <div className="cursor-pointer hover:text-red-600">International</div>
-        <div className="cursor-pointer hover:text-red-600">World</div>
-        <div className="cursor-pointer hover:text-red-600">India</div>
-      </div>
+          navigate("/CustomNews");}}>Science</div>  
+              </div>
       <div>
         <div
           id="carouselExampleIndicators"
