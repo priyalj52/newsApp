@@ -47,7 +47,7 @@ const Hero1Section = () => {
           navigate("/CustomNews");}}>Sports</div>
         <div className="cursor-pointer hover:text-red-600" onClick={()=>{
           localStorage.setItem("subject", "Entertainment");
-          navigate("/CustomNews");}}>Entertaiment</div>
+          navigate("/CustomNews");}}>Entertainment</div>
         <div className="cursor-pointer hover:text-red-600 " onClick={()=>{
           localStorage.setItem("subject", "Health");
           navigate("/CustomNews");}}>Health</div>

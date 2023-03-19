@@ -1,23 +1,32 @@
-import React from 'react'
+import React  , {useRef , useEffect , useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Navbar = () => {
-      const inputel=document.getElementById("input-field")
+const Navbar = ({setTopic}) => {
+      const input_value = useRef(null);
+      const [subject , setsubject] = useState("");
+
+      useEffect(()=>{
+            console.log("change");
+      },[]);
+
+
+
       const handleclick=()=>{
-            console.log(inputel.value)
-            navigate("/Search")
+            // console.log(input_value);
+            // setTopic(input_value.current.value);
+            setTopic(subject);
+            navigate("/Search");
       }
       const navigate=useNavigate();
-
       return (
-            <div className='w-full bg-black p-3 flex justify-between items-center'>
+            <div  className='w-full bg-black p-3 flex justify-between items-center'>
                   <div className='text-white'>
                         <span className='bg-[#FBA627] p-1 rounded-sm'>Latest</span>
                         <span>News</span>
                   </div>
                   <div className='flex gap-4'>
                         <div className='flex bg-slate-300 p-1 rounded-sm'>
-                              <input className='outline-none bg-transparent' type={"text"} id="input-field" placeholder="Search" />
+                              <input ref={input_value} onChange={(e)=>{setsubject(e.target.value); }} className='outline-none bg-transparent' type={"text"} id="input-field" placeholder="Search" />
                               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#fff" className="bi bi-search cursor-pointer" viewBox="0 0 16 16" onClick={handleclick}  >
                                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                               </svg>
