@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BG from '../images/no_image.jpg';
+import "../../src/App.css"
 const Hero1Section = () => {
  const navigate =useNavigate();
   const [herodata, setherodata] = useState([]);
@@ -72,7 +73,7 @@ const Hero1Section = () => {
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
-          <div class="carousel-inner bg-[#E3F2FD] w-full md:p-5 border-[1px] border-black">
+          <div class="carousel-inner bg-[#a6adb299] w-full md:p-5 border-[1px] border-black">
             {herodata &&
               herodata.length !== 0 &&
               herodata.map((val, idx) => (
@@ -125,7 +126,7 @@ const Hero1Section = () => {
             role="button"
             data-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon " aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
         </div>
