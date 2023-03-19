@@ -8,7 +8,6 @@ import {Routes,Route} from "react-router-dom"
 function App() {
   return (
     <div className='w-full h-auto bg-slate-100'>
-     <Navbar/>
      <Hero1Section/>
      <Prediction/>
      <Recommendation/>
