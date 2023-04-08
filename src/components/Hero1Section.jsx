@@ -11,16 +11,26 @@ const Hero1Section = () => {
         localStorage.getItem("Heronews") === undefined ||
         localStorage.getItem("Heronews") === null
       ) {
+        // await fetch(
+        //   `https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
+        // )
         await fetch(
-          `https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
+          "http://localhost:3001/general"
         )
+        // console.log(data)
           .then((res) => res.json())
           .catch((Err) => console.log(Err))
           .then((res) => {
+           if(res.stat===404)
+           {
+            return alert("Kindly refresh the page")
+            
+           }
             console.log(res);
-            setherodata(res.articles);
-            localStorage.setItem("Heronews", JSON.stringify(res.articles));
+            setherodata(res.result.articles);
+            localStorage.setItem("Heronews", JSON.stringify(res.result.articles));
           });
+          
       } else {
         setherodata(JSON.parse(localStorage.getItem("Heronews")));
       }

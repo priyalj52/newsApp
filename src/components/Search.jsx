@@ -9,17 +9,31 @@ const navigate=useNavigate();
       console.log(`Failed ${err}`);
     };
   
+   if(Topic) 
+   {
+    console.log(Topic);
     const fetchapi = async () => {
+      // const response = await fetch(
+      //   `https://newsapi.org/v2/everything?sortBy=popularity&q=${Topic}&pageSize=10&language=en&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
+      // );
       const response = await fetch(
-        `https://newsapi.org/v2/everything?sortBy=popularity&q=${Topic}&pageSize=10&language=en&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
+        "http://localhost:3001/topic",{
+          method:"POST",
+          mode:'no-cors',
+          headers: { 'Content-Type': 'application/json',
+          "Accept":"application/json"
+         },
+          body: JSON.stringify(
+           {Topic}),
+        }
       );
       console.log(response);
       const data = await response.json();
       console.log(data);
       setRes(data.articles);
-    };
+   };
     fetchapi().catch(handleError);
-  }, [Topic]);
+  }}, [Topic]);
 
 
 
