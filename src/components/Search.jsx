@@ -39,7 +39,8 @@ const navigate=useNavigate();
       body: JSON.stringify({ title: Topic })
   };
     await fetch(
-      "http://localhost:3001/topic",requestOptions
+      // "http://localhost:3001/topic",requestOptions
+      "https://newsapp-d496.onrender.com/topic",requestOptions
     ).then((res) => res.json()).catch((err) => console.error(err))
     .then((response) => arr = response);
     // console.log(arr);

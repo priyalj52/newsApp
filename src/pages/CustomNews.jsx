@@ -19,7 +19,8 @@ const CustomNews = () => {
       // setRes(data.articles);
       let arr = [];
       await fetch(
-        `http://localhost:3001/subject`,
+        // `http://localhost:3001/subject`,
+        ("https://newsapp-d496.onrender.com/subject"),
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

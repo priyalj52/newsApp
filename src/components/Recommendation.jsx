@@ -24,7 +24,8 @@ const Recommendation = () => {
       //   setData(data.articles);
       //   localStorage.setItem("TopHeadnews", JSON.stringify(data.articles));
       let arr = [];
-        await fetch("http://localhost:3001/recommendation")
+        // await fetch("http://localhost:3001/recommendation")
+        await fetch("https://newsapp-d496.onrender.com/recommendation")
         .then((response) => response.json())
         .catch((err) => {console.error(err)})
         .then((response) => arr = response);

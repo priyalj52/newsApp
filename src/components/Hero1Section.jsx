@@ -15,7 +15,8 @@ const Hero1Section = () => {
         //   `https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
         // )
         await fetch(
-          "http://localhost:3001/general"
+          // "http://localhost:3001/general"
+          ("https://newsapp-d496.onrender.com/general")
         )
         // console.log(data)
           .then((res) => res.json())
