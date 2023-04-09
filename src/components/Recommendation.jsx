@@ -15,14 +15,24 @@ const Recommendation = () => {
         localStorage.getItem("TopHeadnews") === undefined ||
         localStorage.getItem("TopHeadnews") === null
       ) {
-        const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?q=latest&pageSize=3&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
-        );
-        console.log(response);
-        const data = await response.json();
-        console.log(data.articles);
-        setData(data.articles);
-        localStorage.setItem("TopHeadnews", JSON.stringify(data.articles));
+      //   const response = await fetch(
+      //     `https://newsapi.org/v2/top-headlines?q=latest&pageSize=3&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
+      //   );
+      //   console.log(response);
+      //   const data = await response.json();
+      //   console.log(data.articles);
+      //   setData(data.articles);
+      //   localStorage.setItem("TopHeadnews", JSON.stringify(data.articles));
+      let arr = [];
+        await fetch("http://localhost:3001/recommendation")
+        .then((response) => response.json())
+        .catch((err) => {console.error(err)})
+        .then((response) => arr = response);
+        console.log(arr);
+        console.log(arr.result.articles);
+        setData(arr.result.articles);
+        localStorage.setItem("TopHeadnews", JSON.stringify(arr.result.articles));
+      
       } else {
         setData(JSON.parse(localStorage.getItem("TopHeadnews")));
       }

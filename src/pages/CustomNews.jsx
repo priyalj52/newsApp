@@ -10,13 +10,26 @@ const CustomNews = () => {
     };
     const subject = localStorage.getItem("subject");
     const fetchapi = async () => {
-      const response = await fetch(
-        `https://newsapi.org/v2/everything?sortBy=popularity&q=${subject}&pageSize=10&language=en&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
-      );
-      console.log(response);
-      const data = await response.json();
-      console.log(data);
-      setRes(data.articles);
+      // const response = await fetch(
+      //   `https://newsapi.org/v2/everything?sortBy=popularity&q=${subject}&pageSize=10&language=en&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
+      // );
+      // console.log(response);
+      // const data = await response.json();
+      // console.log(data);
+      // setRes(data.articles);
+      let arr = [];
+      await fetch(
+        `http://localhost:3001/subject`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ searchsubject: subject })
+        }
+      ).then((res) => res.json())
+      .catch((err) => console.log(err))
+      .then((res) => arr = res);
+      // console.log(arr);
+      setRes(arr.result.articles);
     };
     fetchapi().catch(handleError);
   }, []);

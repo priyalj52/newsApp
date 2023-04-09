@@ -11,28 +11,47 @@ const navigate=useNavigate();
   
    if(Topic) 
    {
-    console.log(Topic);
+    // console.log(Topic);
+    // const arr=[]
     const fetchapi = async () => {
-      // const response = await fetch(
-      //   `https://newsapi.org/v2/everything?sortBy=popularity&q=${Topic}&pageSize=10&language=en&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
-      // );
-      const response = await fetch(
-        "http://localhost:3001/topic",{
-          method:"POST",
-          mode:'no-cors',
-          headers: { 'Content-Type': 'application/json',
-          "Accept":"application/json"
-         },
-          body: JSON.stringify(
-           {Topic}),
-        }
-      );
-      console.log(response);
-      const data = await response.json();
-      console.log(data);
-      setRes(data.articles);
+    //   // const response = await fetch(
+    //   //   `https://newsapi.org/v2/everything?sortBy=popularity&q=${Topic}&pageSize=10&language=en&apiKey=64fca12e4bed424e9c1b9118b8a2da9f`
+    //   // );
+    //   const response = await fetch(
+    //     "http://localhost:3001/topic",{
+    //       method:"POST",
+    //       mode:'no-cors',
+    //       headers: { 'Content-Type': 'application/json',
+    //       "Accept":"application/json"
+    //      },
+    //       body: JSON.stringify(
+    //        {Topic}),
+    //     }
+    //   );
+    //   console.log(response);
+    //   const data = await response.json();
+    //   console.log(data);
+    //   setRes(data.articles);
+    let arr = [];
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: Topic })
+  };
+    await fetch(
+      "http://localhost:3001/topic",requestOptions
+    ).then((res) => res.json()).catch((err) => console.error(err))
+    .then((response) => arr = response);
+    // console.log(arr);
+    if(arr.stat === 404)
+    {
+      alert("error try again");
+      return;
+    }
+    setRes(arr.result.articles);
+  
    };
-    fetchapi().catch(handleError);
+  fetchapi().catch(handleError);
   }}, [Topic]);
 
 
