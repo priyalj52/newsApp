@@ -40,32 +40,32 @@ const Hero1Section = () => {
   }, []);
   return (
     <div>
-      <div className="flex flex-wrap w-full gap-3 p-4 justify-between font-bold text-sm">
-        <div className="cursor-pointer hover:text-red-600" onClick={()=>{
+      <div className="flex flex-wrap w-full gap-1 p-2 md:justify-evenly  font-bold text-sm ">
+        <div className="cursor-pointer hover:text-red-600  bg-black p-[1rem] border-black/5 rounded-lg text-white" onClick={()=>{
           localStorage.setItem("subject", "Latest");
           navigate("/CustomNews");
         }}>
           All News
         </div>
-        <div className="cursor-pointer hover:text-red-600"  onClick={()=>{
+        <div className="cursor-pointer hover:text-red-600  bg-black p-[1rem] border-black/5 rounded-lg text-white"  onClick={()=>{
           localStorage.setItem("subject", "India");
           navigate("/CustomNews");}}>India</div>
-        <div className="cursor-pointer hover:text-red-600"onClick={()=>{
+        <div className="cursor-pointer hover:text-red-600  bg-black p-[1rem] border-black/5 rounded-lg text-white"onClick={()=>{
           localStorage.setItem("subject", "Politics");
           navigate("/CustomNews");}} >Politics</div>
-        <div className="cursor-pointer hover:text-red-600" onClick={()=>{
+        <div className="cursor-pointer hover:text-red-600  bg-black p-[1rem] border-black/5 rounded-lg text-white" onClick={()=>{
           localStorage.setItem("subject", "Sports");
           navigate("/CustomNews");}}>Sports</div>
-        <div className="cursor-pointer hover:text-red-600" onClick={()=>{
+        <div className="cursor-pointer hover:text-red-600  bg-black p-[1rem] border-black/5 rounded-lg text-white" onClick={()=>{
           localStorage.setItem("subject", "Entertainment");
           navigate("/CustomNews");}}>Entertainment</div>
-        <div className="cursor-pointer hover:text-red-600 " onClick={()=>{
+        <div className="cursor-pointer hover:text-red-600  bg-black p-[1rem] border-black/5 rounded-lg text-white" onClick={()=>{
           localStorage.setItem("subject", "Health");
           navigate("/CustomNews");}}>Health</div>
-        <div className="cursor-pointer hover:text-red-600" onClick={()=>{
+        <div className="cursor-pointer hover:text-red-600  bg-black p-[1rem] border-black/5 rounded-lg text-white" onClick={()=>{
           localStorage.setItem("subject", "Technology");
           navigate("/CustomNews");}} >Technology</div>
-        <div className="cursor-pointer hover:text-red-600" onClick={()=>{
+        <div className="cursor-pointer hover:text-red-600  bg-black p-[1rem] border-black/5 rounded-lg text-white" onClick={()=>{
           localStorage.setItem("subject", "Science");
           navigate("/CustomNews");}}>Science</div>  
               </div>
@@ -94,7 +94,7 @@ const Hero1Section = () => {
                     idx === 0 ? "carousel-item active" : "carousel-item"
                   }`}
                 >
-                  <div className="w-5/6 justify-center mx-auto my-0 flex border-[1px] border-black">
+                  <div className="w-5/6 justify-center mx-auto my-0 flex border-[1px] border-black  flex-wrap">
                     <img
                       class="w-[500px] h-[300px] object-cover "
                       src={`${
@@ -104,19 +104,19 @@ const Hero1Section = () => {
                       }`}
                       alt="First slide"
                     />
-                    <div className=" w-full flex flex-col items-center bg-[#c4933d86] p-5">
-                      <div className="text-center w-full text-2xl font-bold text-white">
+                    <div className=" w-full flex flex-col items-center md:items-end bg-[#c4933d86] p-5">
+                      <div className="text-center w-full text-3xl font-bold mb-3 text-white">
                         {val.title}
                       </div>
-                      <div className=" text-blue-900 font-semibold text-center text-md">
-                        {val.author}
-                      </div>
-                      <div className="w-full text-justify  font-semibold">
+                      {/* <div className=" text-blue-900 font-semibold text-center text-md">
+                        {val.author} */}
+                      {/* </div> */}
+                      <div className="w-full text-center text-md font-semibold">
                         {val.description}
                       </div>
-                      <a href={val.url} className="bg-[#B5EF8A] hover:text-black cursor-pointer hover:no-underline	 p-1 text-center rounded-md shadow-lg font-semibold">
+                      <button onClick={val.url} className="bg-[#B5EF8A] hover:text-black cursor-pointer hover:no-underline	 p-1  rounded-md shadow-lg font-semibold md:">
                         Learn More
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>

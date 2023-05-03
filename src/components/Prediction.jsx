@@ -14,13 +14,13 @@ const Prediction = () => {
         <div className="predict">
             <div className="p-header">
                 <h1 className="font-bold text-4xl m-9" >   Popular Recommendations</h1>
-                <div className="icons flex w-full flex-wrap justify-between cursor-pointer">
+                <div className="icons flex w-full flex-wrap justify-evenly cursor-pointer">
                  
                     
                 <img onClick={()=>{
                     localStorage.setItem("subject" , "politics");
                     navigate('/CustomNews');
-                }} src={Politics} alt="politics" className="w-40 pr-2  rounded-full ml-4"   />
+                }} src={Politics} alt="politics" className="w-40 rounded-full "   />
               
                 <img 
                 onClick={()=>{
